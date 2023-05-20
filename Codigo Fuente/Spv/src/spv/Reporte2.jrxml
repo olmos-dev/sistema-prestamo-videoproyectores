@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f2f56806-e76b-409e-a541-4bc6aa651afb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameterF1" class="java.lang.String"/>
+	<parameter name="parameterF2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     prestamovista.`folio` AS prestamovista_folio,
+     prestamovista.`inventario` AS prestamovista_inventario,
+     prestamovista.`fecha` AS prestamovista_fecha,
+     prestamovista.`hora` AS prestamovista_hora,
+     prestamovista.`matricula` AS prestamovista_matricula,
+     prestamovista.`nombre` AS prestamovista_nombre,
+     prestamovista.`materia` AS prestamovista_materia,
+     prestamovista.`horario` AS prestamovista_horario,
+     prestamovista.`maestro` AS prestamovista_maestro,
+     prestamovista.`aula` AS prestamovista_aula,
+     prestamovista.`VGA` AS prestamovista_VGA,
+     prestamovista.`HDMI` AS prestamovista_HDMI,
+     prestamovista.`extension` AS prestamovista_extension,
+     prestamovista.`bocinas` AS prestamovista_bocinas
+FROM
+     `prestamovista` prestamovista where fecha between $P{parameterF1} and $P{parameterF2};]]>
+	</queryString>
+	<field name="prestamovista_folio" class="java.lang.Integer"/>
+	<field name="prestamovista_inventario" class="java.lang.String"/>
+	<field name="prestamovista_fecha" class="java.sql.Date"/>
+	<field name="prestamovista_hora" class="java.lang.String"/>
+	<field name="prestamovista_matricula" class="java.lang.String"/>
+	<field name="prestamovista_nombre" class="java.lang.String"/>
+	<field name="prestamovista_materia" class="java.lang.String"/>
+	<field name="prestamovista_horario" class="java.lang.String"/>
+	<field name="prestamovista_maestro" class="java.lang.String"/>
+	<field name="prestamovista_aula" class="java.lang.String"/>
+	<field name="prestamovista_VGA" class="java.lang.String"/>
+	<field name="prestamovista_HDMI" class="java.lang.String"/>
+	<field name="prestamovista_extension" class="java.lang.String"/>
+	<field name="prestamovista_bocinas" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="198" y="0" width="416" height="35" uuid="8e818d4f-c760-4680-a1cf-57a2ae8c3cf2"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Facultad de Medicina - Aula de medios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="35" width="443" height="32" forecolor="#FF0000" uuid="7a7852e1-acda-4a4b-893f-fbd9a7f6c6a5"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Reporte - Registro de Préstamos de Videoproyectores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="71" width="132" height="15" uuid="bb418441-3a43-4311-b3f7-995a3d921372"/>
+				<text><![CDATA[Universidad Veracruzana]]></text>
+			</staticText>
+			<image>
+				<reportElement x="57" y="3" width="519" height="64" uuid="fd07862c-ef79-45af-b58c-b97eb5470883"/>
+				<imageExpression><![CDATA["C:\\Users\\Alberto Olmos\\Desktop\\LogoUV.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="98" width="47" height="20" uuid="f5062e36-631b-4538-824d-328fcb5a7369"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="47" y="98" width="59" height="20" uuid="fe1b0ee2-4034-49e9-a990-6af3a10778d2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameterF1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="106" y="98" width="15" height="20" uuid="fa4aff23-a5d5-41e7-88f6-ebe283d7364d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="98" width="100" height="20" uuid="c23f831d-726f-4c34-915d-b8d12ef0e3f9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameterF2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="8" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="36" height="20" uuid="5a9a9e16-1843-4f9f-8acb-a5d7773fc61a"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOLIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="0" width="64" height="20" uuid="6b9c69a9-a8e7-40e2-be50-f6cf9ea7e5a0"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="42" height="20" uuid="d1545e80-dbb3-487c-b31a-34624dd8286f"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="29" height="20" uuid="f31f0c58-2c76-4af5-b6b9-684ab4941882"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="62" height="20" uuid="f601ccbf-d2e3-45be-a08b-45962e6addfa"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATRICULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="46" height="20" uuid="0c8a285e-cf53-45b7-ae26-cf0afb32012a"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="0" width="47" height="20" uuid="a562332e-1831-421b-af0c-f3c60b877fea"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MATERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="0" width="50" height="20" uuid="d5a5a883-e2cf-4986-9d12-f621fa9521d2"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="565" y="0" width="54" height="20" uuid="5f80401a-b274-4cd9-a5b6-ac42e5704550"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MAESTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="631" y="0" width="30" height="20" uuid="fac66639-eaa9-4b4c-8cfe-ef29c1969a50"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="676" y="0" width="22" height="20" uuid="86f8802c-ca5e-423e-a781-995e2cde18be"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="0" width="29" height="20" uuid="f5bf5168-ab7b-4960-bd04-6809124db7ed"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HDMI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="730" y="0" width="26" height="20" uuid="06b4b7cf-a5ca-4ea9-a47d-80e695eaaf94"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="756" y="0" width="46" height="20" uuid="aa54410b-f1dc-4841-b0d8-2aa7628ea20b"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOCINAS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="19" width="802" height="1" forecolor="#0099FF" uuid="16a22d00-6837-487c-a8fd-3bac78b6b721"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="36" height="20" uuid="6295fc13-2849-4d85-a45a-985d9408f860"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_folio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="0" width="64" height="20" uuid="d46ea7ff-a6ed-47c6-99ff-d47a2d80b98a"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_inventario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="42" height="20" uuid="a043a131-5197-44fd-8634-5c96ea55b70c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="0" width="41" height="20" uuid="4a7a1388-6607-4a52-9d00-557d7e534d2e"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="0" width="62" height="20" uuid="91f6e137-036c-4c0c-8dd2-d2ab9082f246"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="0" width="110" height="36" uuid="56d6ef4b-a532-4b9d-9297-e1a5af4d73b0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="1" width="134" height="36" uuid="9ff3f23b-202f-4e19-89e0-e746f8760748"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_materia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="565" y="0" width="49" height="36" uuid="93920fa9-c1db-43fa-9689-f0be556df06e"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_maestro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="619" y="0" width="57" height="20" uuid="cfa11635-27d5-4019-9952-c7f2ade2d0b3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_aula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="0" width="66" height="20" uuid="1ab24905-d8f7-490e-9c63-4c3c6af6ee7b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_horario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="678" y="0" width="22" height="20" uuid="2227fa7e-52ad-42f4-8a55-b3cbf55f58c0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_VGA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="0" width="28" height="20" uuid="6d3385a8-77aa-4b6f-82ba-d1a0b6130cf1"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_HDMI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="26" height="20" uuid="70ce3e02-dd4a-491f-b18c-3fedfc669319"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_extension}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="762" y="0" width="27" height="20" uuid="e57d14e4-67f5-4e7f-997b-587d3896cfd9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prestamovista_bocinas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="682" y="0" width="80" height="20" uuid="0537a0cb-fa74-4d11-b248-d84c24c0a3d4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="0" width="40" height="20" uuid="149cbd6c-6000-4be5-ac7e-597fd2f79470"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="a5f69894-ff1e-4285-b333-a205511e2f42"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
