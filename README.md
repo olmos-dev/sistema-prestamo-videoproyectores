@@ -8,6 +8,9 @@ Mientras tanto, como finalidad del presente trabajo se desarrollara un sistema l
 
 Para finalizar, se reunieron todos los requerimientos necesarios para el análisis, diseño, codificación y pruebas para el desarrollo del sistema. Además se utilizaron herramientas de software para su construcción y para su análisis se utilizaron metodologías que más adelante se explicara en el presente trabajo.
 
+
+![Portada del sistema](/s1.jpg)
+
 # Implementación del Sistema
 Es necesario llevar un control adecuado y correcto para el préstamo de los proyectores, así como también de los accesorios que necesita.
 Mientras tanto, se implementara un software que cubra los requerimientos necesarios para la administración de los cañones.
